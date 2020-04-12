@@ -24,12 +24,17 @@ Globals:
       Role: !Ref CodeDeployRole
 
 Resources:
-  GetHelloWorld:
+  DanielFE:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub 'awscodestar-${ProjectId}-lambda-GetHelloWorld'
+      FunctionName: !Sub 'awscodestar-${ProjectId}-lambda-DanielFE'
       Handler: index.get
       Runtime: nodejs12.x
+      Environment:
+        Variables:
+          REACT_APP_APP_NAME: "Awesome Company"
+          REACT_APP_APP_BASE_URL: /
+          REACT_APP_API_BASE_URL: https://rickandmortyapi.com/api/
       Role:
         Fn::GetAtt:
         - LambdaExecutionRole
@@ -40,6 +45,11 @@ Resources:
           Properties:
             Path: /
             Method: get
+          AnyEvent:
+            Type: Api
+            Properties:
+              Path: /{proxy+}
+              Method: any
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
     Type: AWS::IAM::Role
