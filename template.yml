@@ -25,9 +25,9 @@ Globals:
 
 Resources:
   DanielFE:
+    FunctionName: !Sub 'awscodestar-${ProjectId}-lambda-DanielFE'
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub 'awscodestar-${ProjectId}-lambda-DanielFE'
       Handler: index.handler
       Runtime: nodejs12.x
       Role:
@@ -40,11 +40,11 @@ Resources:
           Properties:
             Path: /
             Method: get
-          AnyEvent:
-            Type: Api
-            Properties:
-              Path: /{proxy+}
-              Method: any
+        AnyEvent:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: any
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
     Type: AWS::IAM::Role
