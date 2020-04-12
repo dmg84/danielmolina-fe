@@ -28,13 +28,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: !Sub 'awscodestar-${ProjectId}-lambda-DanielFE'
-      Handler: index.get
+      Handler: index.handler
       Runtime: nodejs12.x
-      Environment:
-        Variables:
-          REACT_APP_APP_NAME: "Awesome Company"
-          REACT_APP_APP_BASE_URL: /
-          REACT_APP_API_BASE_URL: https://rickandmortyapi.com/api/
       Role:
         Fn::GetAtt:
         - LambdaExecutionRole
