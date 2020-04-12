@@ -25,9 +25,9 @@ Globals:
 
 Resources:
   DanielFE:
-    FunctionName: !Sub 'awscodestar-${ProjectId}-lambda-DanielFE'
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: !Sub 'awscodestar-${ProjectId}-lambda-DanielFE'
       Handler: index.handler
       Runtime: nodejs12.x
       Role:
