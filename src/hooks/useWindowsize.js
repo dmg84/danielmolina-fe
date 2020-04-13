@@ -1,29 +1,29 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
+
+export const getWidth = () => window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
 
 export const useWindowSize = () => {
-    const isClient = typeof window === 'object';
+    // save current window width in the state object
+    let [width, setWidth] = useState(getWidth());
 
-    const getSize = () => {
-        return {
-            width: isClient ? window.innerWidth : undefined,
-            height: isClient ? window.innerHeight : undefined
-        };
-    };
-
-    const [windowSize, setWindowSize] = useState(getSize);
-
+    // in this case useEffect will execute only once because
+    // it does not have any dependencies.
     useEffect(() => {
-        if (!isClient) {
-            return false;
-        }
-
-        const handleResize = () => {
-            setWindowSize(getSize());
+        const resizeListener = () => {
+            // change width from the state object
+            setWidth(getWidth())
         };
+        // set resize listener
+        window.addEventListener('resize', resizeListener);
 
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        // clean up function
+        return () => {
+            // remove resize listener
+            window.removeEventListener('resize', resizeListener);
+        }
     }, []);
 
-    return windowSize;
+    return width;
 };

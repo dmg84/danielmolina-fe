@@ -1,6 +1,14 @@
 @import "../../styles/base";
+@import "../../styles/responsive";
 
+.travolta {
+  width: 55%;
 
-.travolta{
-  width: 100%;
+  @media screen and (max-width: $mobile) {
+    width: 85%;
+  }
+
+  @media screen and (min-width: $screen-big) {
+    width: 55%;
+  }
 }

@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import styles from './not-found.module.scss'
-import Travolta from '../../images/404.gif'
+import Tumbleweed from '../../images/Tumbleweed.gif'
+import {paths} from "../../routes/routes";
+import {Link} from "react-router-dom";
 
 const NotFound = () => {
     const [loadedImage, setLoadedImage] = useState(false);
@@ -11,19 +13,21 @@ const NotFound = () => {
         img.src = url;
     };
 
-
     useEffect(() => {
-        if (!loadedImage) preLoadImage(Travolta)
+        if (!loadedImage) preLoadImage(Tumbleweed)
     });
 
     return (
-        <>
-            {loadedImage &&
-            <main className={styles.container}>
-                <h2>404 - Page not found!</h2>
-                <img className={styles.travolta} src={Travolta} alt="travolta meme image"/>
-            </main>}
-        </>
+        <main className={styles.container}>
+            {loadedImage ?
+                <>
+                    <h2>Page not found</h2>
+                    <img className={styles.travolta} src={Tumbleweed} alt="travolta meme"/>
+                    <p>Please, go to <Link to={paths.root}>main page</Link> .</p>
+                </> : <></>
+            }
+        </main>
+
     );
 };
 

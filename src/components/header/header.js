@@ -1,48 +1,53 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import styles from './header.module.scss';
 import {Link, useHistory} from 'react-router-dom'
-import {Collapse} from 'react-burgers'
 import {useWindowSize} from "../../hooks/useWindowsize";
-import LogoDark from '../../images/logo_transparent_dark_theme.png';
-import LogoLight from '../../images/logo_transparent_light_theme.png';
+import BracketLeft from '../../images/bracket_left_light_theme.png';
+import BracketRight from '../../images/bracket_right_light_theme.png';
+import {paths} from "../../routes/routes";
+import {LateralMenuMobile} from "../lateralMobileMenu/lateralMenuMobile";
 
 
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(false);
     const history = useHistory();
-    const screenSize = useWindowSize();
-    console.log(screenSize);
-
-
-    useEffect(()=>{
-        if(screenSize.width >= 720) setOpenMenu(false);
-    })
-
-
-    const drawMenu = () => {
-        if(screenSize.width >= 720){
-            return (
-                <ul className={styles.menu}>
-                    <li> <Link to={'#'}>Page 1</Link></li>
-                    <li> <Link to={'#'}>Page 2</Link></li>
-                    <li> <Link to={'#'}>Page 3</Link></li>
-                </ul>
-            );
-        }
-        return (
-            <Collapse padding={'4px 0 0 0'} active={openMenu} onClick={() => {
-                setOpenMenu(!openMenu)
-            }}/>
-        );
-    };
+    const width = useWindowSize();
+    const close = openMenu ? styles.bracket : styles.bracketHide;
+    const open = openMenu ? styles.bracketHide : styles.bracket;
+    const mobileResolution = 768;
 
     return (
-        <header className={styles.header}>
-            <div className={styles.subHeader}>
-                <img src={LogoLight} alt=""/>
-                {drawMenu()}
-            </div>
-        </header>
+        <>
+            <header className={styles.header}>
+                <div className={styles.subHeader}>
+                    <Link className={styles.name} to={paths.root}><span
+                        className={styles.anthracite}>d</span><span>aniel</span><span
+                        className={styles.anthracite}>M</span><span>olina</span></Link>
+
+                    {width > mobileResolution ?
+                        <ul className={styles.menu}>
+                            <li><Link className={history.location.pathname.includes('aaa') ? styles.active : ''}
+                                      to={'#'}>About</Link></li>
+                            <li><Link to={'#'}>Articles</Link></li>
+                            <li><Link to={'#'}>Works</Link></li>
+                            <li><Link to={'#'}>Contact</Link></li>
+                        </ul>
+                        :
+                        <div className={`${styles.menuBtn}`} onClick={() => {
+                            setOpenMenu(!openMenu)
+                        }}>
+                            <img src={BracketLeft} alt=""/>
+                            <div className={styles.menuBtnText}>
+                                <span className={close}>Close</span>
+                                <span className={open}>Open</span>
+                            </div>
+                            <img src={BracketRight} alt=""/>
+                        </div>
+                    }
+                </div>
+            </header>
+            <LateralMenuMobile show={openMenu && width <= mobileResolution}/>
+        </>
     );
 };
 

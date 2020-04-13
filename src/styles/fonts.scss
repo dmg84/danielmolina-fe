@@ -1,16 +1,125 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Montserrat&display=swap');
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/openSans/open-sans-v17-latin-300.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans Light'), local('OpenSans-Light'),
+  url('../fonts/openSans/open-sans-v17-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/openSans/open-sans-v17-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/openSans/open-sans-v17-latin-300.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/openSans/open-sans-v17-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/openSans/open-sans-v17-latin-300.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/openSans/open-sans-v17-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+  url('../fonts/openSans/open-sans-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/openSans/open-sans-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/openSans/open-sans-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/openSans/open-sans-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/openSans/open-sans-v17-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/openSans/open-sans-v17-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+  url('../fonts/openSans/open-sans-v17-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/openSans/open-sans-v17-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/openSans/open-sans-v17-latin-700.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/openSans/open-sans-v17-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/openSans/open-sans-v17-latin-700.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+
+@font-face {
+  font-family: 'Chivo';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/chivo/chivo-v11-latin-300.eot'); /* IE9 Compat Modes */
+  src: local('Chivo Light'), local('Chivo-Light'),
+  url('../fonts/chivo/chivo-v11-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/chivo/chivo-v11-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/chivo/chivo-v11-latin-300.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/chivo/chivo-v11-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/chivo/chivo-v11-latin-300.svg#Chivo') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Chivo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/chivo/chivo-v11-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Chivo Regular'), local('Chivo-Regular'),
+  url('../fonts/chivo/chivo-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/chivo/chivo-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/chivo/chivo-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/chivo/chivo-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/chivo/chivo-v11-latin-regular.svg#Chivo') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/roboto/roboto-v20-latin-300.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Light'), local('Roboto-Light'),
+  url('../fonts/roboto/roboto-v20-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/roboto/roboto-v20-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/roboto/roboto-v20-latin-300.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/roboto/roboto-v20-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/roboto/roboto-v20-latin-300.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/roboto/roboto-v20-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Roboto'), local('Roboto-Regular'),
+  url('../fonts/roboto/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/roboto/roboto-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/roboto/roboto-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/roboto/roboto-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/roboto/roboto-v20-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/roboto/roboto-v20-latin-500.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+  url('../fonts/roboto/roboto-v20-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/roboto/roboto-v20-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/roboto/roboto-v20-latin-500.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/roboto/roboto-v20-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/roboto/roboto-v20-latin-500.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+
+$font-special: 'Chivo', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+sans-serif;
 
 $font-loading: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 sans-serif;
 
-$font-titles: 'Raleway', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+$font-titles: 'Roboto', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 sans-serif;
 
-$font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+$font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 sans-serif;
 
-$font-code: 'Fira Code', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+$font-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 monospace;

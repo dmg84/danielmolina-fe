@@ -4,13 +4,10 @@ import React, {lazy, Suspense} from 'react'
 const Header = lazy(() => import('../components/header/header'));
 const Footer = lazy(() => import('../components/footer/footer'));
 const NotFound = lazy(() => import('../modules/not-found/not-found'));
-const Elements = lazy(() => import('../modules/elements/elements'));
-const ViewElement = lazy(() => import('../modules/view-element/view-element'));
+const Landing = lazy(() => import('../modules/landing/landing'));
 
 export const paths = {
     root: '/',
-    viewElement: '/view-element/:id',
-    viewElementBase: '/view-element/',
 };
 
 
@@ -23,12 +20,7 @@ export const Routes = () => (
                 <Route
                     exact
                     path={paths.root}
-                    render={props => <Elements {...props} />}
-                />
-                <Route
-                    exact
-                    path={paths.viewElement}
-                    render={props => <ViewElement {...props} />}
+                    render={props => <Landing {...props} />}
                 />
                 <Route render={props => <NotFound {...props} />}/>
             </Switch>
