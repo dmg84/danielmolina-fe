@@ -34,15 +34,13 @@ const ViewElement = () => {
     return (
         <>
             <div className={`${styles.container} ${styles.generalMarginBottom}`}>
-                {selected && loadedImage ?
+                {selected && loadedImage &&
                     <>
                         <h2>{selected.name}</h2>
                         <img src={selected.image} alt={`img-${selected.name}`} className={styles.image}/>
                         <span><strong>species:</strong> {selected.species}</span>
                         <span><strong>gender:</strong> {selected.species}</span>
                     </>
-                    :
-                    <h3>Loading data...</h3>
                 }
             </div>
             {redirect && <Redirect to={paths.root}/>}

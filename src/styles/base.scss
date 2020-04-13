@@ -1,10 +1,13 @@
+@import "fonts";
+
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  min-height: calc(100vh - 180px);
 }
 
-.generalMarginBottom {
-  margin-bottom: 100px;
+.loading{
+  font-family: $font-loading;
 }

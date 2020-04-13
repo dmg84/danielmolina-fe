@@ -18,17 +18,16 @@ const App = () => {
 
     return (
         <>
-            <div className={`${styles.container} ${styles.generalMarginBottom}`}>
+            <div className={`${styles.container} ${styles.generalMarginBottom} content`}>
                 {data.length ?
                     <BrowserRouter>
                         <Routes />
                     </BrowserRouter>
                     :
-                    <h3>Loading data...</h3>}
+                    <h3 className={styles.loading}>Loading data...</h3>}
             </div>
         </>
     );
-
 };
 
 export default App;

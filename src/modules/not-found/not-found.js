@@ -1,12 +1,30 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from './not-found.module.scss'
+import Travolta from '../../images/404.gif'
 
-const notFound = () => {
+const NotFound = () => {
+    const [loadedImage, setLoadedImage] = useState(false);
+
+    const preLoadImage = (url) => {
+        const img = new Image();
+        img.onload = () => setLoadedImage(true);
+        img.src = url;
+    };
+
+
+    useEffect(() => {
+        if (!loadedImage) preLoadImage(Travolta)
+    });
+
     return (
-        <main className={`${styles.container} ${styles.generalMarginBottom}`}>
-            <h2>404 - Not found!</h2>
-        </main>
+        <>
+            {loadedImage &&
+            <main className={styles.container}>
+                <h2>404 - Page not found!</h2>
+                <img className={styles.travolta} src={Travolta} alt="travolta meme image"/>
+            </main>}
+        </>
     );
 };
 
-export default notFound
+export default NotFound

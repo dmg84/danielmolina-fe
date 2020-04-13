@@ -13,9 +13,11 @@ export const paths = {
     viewElementBase: '/view-element/',
 };
 
+
+
 export const Routes = () => (
     <Router basename={process.env.REACT_APP_APP_BASE_URL}>
-        <Suspense fallback='Loading component...'>
+        <Suspense fallback=''>
             <Header/>
             <Switch>
                 <Route
