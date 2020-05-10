@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styles from './lateralMenuMobile.module.scss';
 import {Link, useHistory} from "react-router-dom";
 import GitHubLight from "../../images/github_light.svg";
+import {paths} from "../../routes/routes";
 
 export const LateralMenuMobile = (show) => {
     const history = useHistory();
@@ -27,13 +28,15 @@ export const LateralMenuMobile = (show) => {
             <ul className={styles.menu}>
                 <li><Link className={history.location.pathname.includes('aaa') ? styles.active : ''}
                           to={'#'}>About</Link></li>
-                <li><Link to={'#'}>Articles</Link></li>
+                <li><Link className={history.location.pathname.includes(paths.listArticles) ? styles.active : ''}
+                          to={paths.listArticles}>Articles</Link></li>
                 <li><Link to={'#'}>Works</Link></li>
                 <li><Link to={'#'}>Contact</Link></li>
                 <li>
                     <div className={styles.iconContainer}>
-                        <a href={process.env.REACT_APP_GITHUB_URL}><img className={styles.icon} src={GitHubLight}
-                                                                        alt="github icon"/></a>
+                        <a href={process.env.REACT_APP_GITHUB_URL} rel="noopener noreferrer" target={'_blank'}>
+                            <img className={styles.icon} src={GitHubLight} alt="github icon"/>
+                        </a>
                     </div>
                 </li>
             </ul>

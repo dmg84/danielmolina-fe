@@ -3,39 +3,31 @@
 @import "../../styles/responsive";
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  background-color: $beige;
+  //position: fixed;
+  //bottom: 0;
+  background-color: transparent;
   height: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   color: $white-smoke;
-  box-shadow: 0 -1px 10px -2px rgba(0, 0, 0, 0.2);
   font-weight: normal;
 }
 
 .subFooter {
   user-select: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 55px;
   width: 85%;
+  font-family: $font-code;
 
   @media screen and (max-width: $mobile) {
     width: 90%;
   }
   @media screen and (min-width: $screen-big) {
     width: 65%;
-  }
-}
-
-.icon {
-  padding-top: 5px;
-  width: 38px;
-  @media screen and (max-width: $mobile) {
-    width: 30px;
   }
 }

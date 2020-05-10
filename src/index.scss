@@ -28,3 +28,25 @@ p, span, a {
 code {
   font-family: $font-code
 }
+
+.slick-slider {
+  margin: 25px auto 25px;
+  outline: none;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: $black;
+}
+
+.slick-next, .slick-prev {
+  top: 90px;
+}
+
+.slick-prev {
+  left: -35px;
+}
+
+.slick-next:before, .slick-prev:before {
+  font-size: 1.8rem;
+}
+
