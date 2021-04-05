@@ -66,6 +66,16 @@
   }
 }
 
+.iconLink {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .icon {
+    width: 20px;
+    max-width: 20px !important;
+  }
+}
+
 .menuBtn {
   display: flex;
   justify-content: center;

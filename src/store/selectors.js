@@ -1,1 +1,1 @@
-export const getIndex = (state) => state.index;
+export const getArticlesIndex = (state) => state.articlesIndex;

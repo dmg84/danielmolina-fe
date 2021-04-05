@@ -4,9 +4,10 @@
 .base {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
+  min-height: calc(100vh - 125px);
 }
 
 .container {
@@ -17,11 +18,11 @@
   width: 85%;
 
   @media screen and (max-width: $mobile) {
-    width: 90%;
+    width: 100%;
   }
 
   @media screen and (min-width: $screen-big) {
-    width: 55%;
+    width: 65%;
   }
 
   //min-height: calc(100vh - 175px);
