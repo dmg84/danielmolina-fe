@@ -2,11 +2,6 @@
 @import "responsive";
 
 .base {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
   min-height: calc(100vh - 125px);
 }
 
@@ -15,6 +10,10 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin: auto;
+  padding-bottom: 25px;
+  padding-top: 25px;
+
   width: 85%;
 
   @media screen and (max-width: $mobile) {
@@ -24,12 +23,8 @@
   @media screen and (min-width: $screen-big) {
     width: 65%;
   }
-
-  //min-height: calc(100vh - 175px);
-  padding-bottom: 25px;
-  padding-top: 25px;
 }
 
-.loading{
+.loading {
   font-family: $font-loading;
 }

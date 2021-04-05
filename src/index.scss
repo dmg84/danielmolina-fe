@@ -2,6 +2,10 @@
 @import "styles/responsive";
 @import "styles/colors";
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 body {
   margin: 0;

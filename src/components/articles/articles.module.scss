@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 7e44106961996ffdd79a3999c4c1800a4225a48b
 @import "../../styles/colors";
 @import "../../styles/fonts";
 @import "../../styles/responsive";
@@ -24,29 +20,19 @@
       width: 90%;
       margin-bottom: 25px;
     }
-<<<<<<< HEAD
- @media screen and (min-width: $screen-big) {
-      width: 33%;
-    }
 
-    h4{
-=======
     @media screen and (min-width: $screen-big) {
       width: 33%;
     }
 
     h4 {
->>>>>>> 7e44106961996ffdd79a3999c4c1800a4225a48b
       font-size: 1.3rem;
       padding: 0;
       margin: 0;
     }
-<<<<<<< HEAD
-    span{
-=======
+
 
     span {
->>>>>>> 7e44106961996ffdd79a3999c4c1800a4225a48b
       font-size: 1rem;
       padding: 0;
       margin: 0;
@@ -58,5 +44,3 @@
     }
   }
 }
-
-

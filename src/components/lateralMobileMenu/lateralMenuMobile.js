@@ -3,37 +3,37 @@ import styles from './lateralMenuMobile.module.scss';
 import {Link, useHistory} from "react-router-dom";
 import GitHubLight from "../../images/github_light.svg";
 import {paths} from "../../routes/routes";
+import useScroll from "../../hooks/useScroll";
 
-export const LateralMenuMobile = (show) => {
+export const LateralMenuMobile = (props) => {
     const history = useHistory();
     const [memo, setMemo] = useState(false);
     const [firstLoad, setFirstLoad] = useState(false);
     const [animation, setAnimation] = useState('');
+    const [blockScroll, allowScroll] = useScroll();
 
     useEffect(() => {
         if (!firstLoad) {
             setFirstLoad(true);
-        } else if (memo !== show.show) {
-            if (show.show === true) {
+        } else if (memo !== props.show) {
+            if (props.show === true) {
                 setAnimation(styles.menuIn);
+                blockScroll()
             } else {
                 setAnimation(styles.menuOut);
+                allowScroll()
             }
-            setMemo(show.show);
+            setMemo(props.show);
         }
-    }, [show, firstLoad, memo]);
+    }, [props.show, firstLoad, memo]);
 
     return (
         <div className={`${styles.menuContainer} ${animation}`}>
             <ul className={styles.menu}>
                 <li><Link className={history.location.pathname.includes('aaa') ? styles.active : ''}
                           to={'#'}>About</Link></li>
-<<<<<<< HEAD
-                <li><Link className={history.location.pathname.includes(paths.listArticles) ? styles.active : ''} to={paths.listArticles}>Articles</Link></li>
-=======
                 <li><Link className={history.location.pathname.includes(paths.listArticles) ? styles.active : ''}
                           to={paths.listArticles}>Articles</Link></li>
->>>>>>> 7e44106961996ffdd79a3999c4c1800a4225a48b
                 <li><Link to={'#'}>Works</Link></li>
                 <li><Link to={'#'}>Contact</Link></li>
                 <li>

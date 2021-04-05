@@ -18,14 +18,16 @@ const NotFound = () => {
     });
 
     return (
-        <main className={styles.container}>
-            {loadedImage ?
-                <>
-                    <h2>Page not found</h2>
-                    <img className={styles.travolta} src={Tumbleweed} alt="travolta meme"/>
-                    <p>Please, go to <Link to={paths.root}>main page</Link> .</p>
-                </> : <></>
-            }
+        <main className={styles.base}>
+            <div className={styles.container}>
+                {loadedImage ?
+                    <>
+                        <h2>404 - Page not found</h2>
+                        <img className={styles.travolta} src={Tumbleweed} alt="travolta meme"/>
+                        <p>Please, go to <Link to={paths.root}>main page</Link> .</p>
+                    </> : <></>
+                }
+            </div>
         </main>
 
     );
