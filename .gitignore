@@ -12,7 +12,10 @@
 /build
 
 .idea
+<<<<<<< HEAD
 .vscode
+=======
+>>>>>>> 7e44106961996ffdd79a3999c4c1800a4225a48b
 
 # misc
 .DS_Store
@@ -24,3 +27,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
+=======
+package-lock.json
+>>>>>>> 7e44106961996ffdd79a3999c4c1800a4225a48b

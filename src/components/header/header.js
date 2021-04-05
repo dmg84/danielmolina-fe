@@ -17,9 +17,15 @@ const Header = () => {
     const open = openMenu ? styles.bracketHide : styles.bracket;
     const mobileResolution = 768;
 
+<<<<<<< HEAD
     useEffect(()=>{
         openMenu ? document.body.style.overflow = "hidden" : document.body.style.overflow = "";
     },[openMenu])
+=======
+    useEffect(() => {
+        openMenu ? document.body.style.overflow = "hidden" : document.body.style.overflow = "";
+    }, [openMenu])
+>>>>>>> 7e44106961996ffdd79a3999c4c1800a4225a48b
 
     return (
         <>
@@ -33,7 +39,13 @@ const Header = () => {
                         <ul className={styles.menu}>
                             <li><Link className={history.location.pathname.includes('aaa') ? styles.active : ''}
                                       to={'#'}>About</Link></li>
+<<<<<<< HEAD
                             <li><Link className={history.location.pathname.includes(paths.listArticles) ? styles.active : ''} to={paths.listArticles}>Articles</Link></li>
+=======
+                            <li><Link
+                                className={history.location.pathname.includes(paths.listArticles) ? styles.active : ''}
+                                to={paths.listArticles}>Articles</Link></li>
+>>>>>>> 7e44106961996ffdd79a3999c4c1800a4225a48b
                             <li><Link to={'#'}>Works</Link></li>
                             <li><Link to={'#'}>Contact</Link></li>
                             <li>

@@ -28,7 +28,12 @@ export const LateralMenuMobile = (show) => {
             <ul className={styles.menu}>
                 <li><Link className={history.location.pathname.includes('aaa') ? styles.active : ''}
                           to={'#'}>About</Link></li>
+<<<<<<< HEAD
                 <li><Link className={history.location.pathname.includes(paths.listArticles) ? styles.active : ''} to={paths.listArticles}>Articles</Link></li>
+=======
+                <li><Link className={history.location.pathname.includes(paths.listArticles) ? styles.active : ''}
+                          to={paths.listArticles}>Articles</Link></li>
+>>>>>>> 7e44106961996ffdd79a3999c4c1800a4225a48b
                 <li><Link to={'#'}>Works</Link></li>
                 <li><Link to={'#'}>Contact</Link></li>
                 <li>
