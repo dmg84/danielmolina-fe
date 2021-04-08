@@ -8,7 +8,7 @@ exports.handler = function (event, context, callback) {
     const result = {
         statusCode: 200,
         body: contents.toString(),
-        headers: {'content-type': 'text/html'}
+        headers: { 'content-type': 'text/html' }
     };
 
     callback(null, result);

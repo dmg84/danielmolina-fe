@@ -1,0 +1,4 @@
+reportWebVitals.ts
+**/*.spec.ts
+**/*.spec.tsx
+index.js

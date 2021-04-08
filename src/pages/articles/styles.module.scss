@@ -1,0 +1,58 @@
+@import '../../styles/base';
+@import '../../styles/buttons';
+@import '../../styles/responsive';
+@import '../../styles/fonts';
+@import '../../styles/colors';
+
+.customContainer {
+    @media screen and (max-width: $mobile) {
+        width: 100%;
+    }
+}
+
+.specialContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    //margin-top: 50px;
+}
+
+.jumboTron {
+    background-color: $beige;
+}
+
+.specialText {
+    font-family: $font-special;
+    margin-bottom: 0;
+    font-size: 4rem;
+
+    @media screen and (max-width: $mobile) {
+        font-size: 3rem;
+    }
+
+    @media screen and (min-width: $screen-big) {
+        font-size: 6rem;
+    }
+}
+
+.moreGiant {
+    font-size: 8rem;
+    font-family: $font-code;
+    color: $beige-dark;
+
+    @media screen and (max-width: $mobile) {
+        font-size: 4rem;
+    }
+
+    @media screen and (min-width: $screen-big) {
+        font-size: 12rem;
+    }
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
