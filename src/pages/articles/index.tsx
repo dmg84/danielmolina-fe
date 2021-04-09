@@ -6,7 +6,11 @@ import { GetArticlesReducer } from './store/reducer';
 import { useDispatch } from 'react-redux';
 import { getArticlesRequest } from './store/actions';
 
-const Articles: FC = () => {
+type ArticlesType = {
+    limit?: number;
+};
+
+const Articles: FC<ArticlesType> = ({ limit }) => {
     const dispatch = useDispatch();
     const articles: ArticleType[] = GetArticlesReducer();
 
@@ -15,6 +19,17 @@ const Articles: FC = () => {
             dispatch(getArticlesRequest());
         }
     }, [articles.length, dispatch]);
+
+    const drawLimitedElements = () => {
+        const items = limit ? articles.slice(0, limit) : articles;
+        return (
+            <>
+                {items.map((article: ArticleType, key: number) => {
+                    return <Article key={key} article={article} />;
+                })}
+            </>
+        );
+    };
 
     return (
         <main className={styles.base}>
@@ -25,11 +40,7 @@ const Articles: FC = () => {
                 </div>
             </div>
 
-            <div className={styles.articles}>
-                {articles.map((article: ArticleType, key: number) => {
-                    return <Article key={key} article={article} />;
-                })}
-            </div>
+            <div className={styles.articles}>{drawLimitedElements()}</div>
         </main>
     );
 };

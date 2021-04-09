@@ -17,7 +17,7 @@ export const Routes: FC = () => (
         <Suspense fallback=''>
             <Header />
             <Switch>
-                <Route exact path={paths.root} render={() => <Articles />} />
+                <Route exact path={paths.root} render={() => <Articles limit={3} />} />
                 <Route render={() => <NotFound />} />
             </Switch>
             <Footer />
