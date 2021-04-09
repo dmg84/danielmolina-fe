@@ -23,13 +23,6 @@ Globals:
             Type: Canary10Percent5Minutes
             Role: !Ref CodeDeployRole
 
-Package:
-    Include:
-        - index.js
-        - build/index.html
-    Exclude:
-        - ./**
-
 Resources:
     DanielFE:
         Type: AWS::Serverless::Function
@@ -41,6 +34,10 @@ Resources:
                 Fn::GetAtt:
                     - LambdaExecutionRole
                     - Arn
+            Environment:
+                Variables:
+                    NODE_ENV: production
+
             Events:
                 GetEvent:
                     Type: Api
