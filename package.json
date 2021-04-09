@@ -18,7 +18,7 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
+        "test": "react-scripts test --update-snapshot",
         "test:coverage": "react-scripts test --coverage",
         "eject": "react-scripts eject",
         "eslint:fix": "eslint --fix '**/*.ts*'",
