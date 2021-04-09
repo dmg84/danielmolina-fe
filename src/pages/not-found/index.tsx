@@ -20,15 +20,17 @@ const NotFound: FC = () => {
     return (
         <main className={styles.base}>
             <div className={styles.container}>
-                {loadedImage && (
-                    <>
-                        <h2>404 - Page not found</h2>
-                        <img className={styles.travolta} src={Tumbleweed} alt='travolta meme' />
-                        <p>
-                            Please, go to <Link to={paths.root}>main page</Link> .
-                        </p>
-                    </>
-                )}
+                <>
+                    <h2>404 - Page not found</h2>
+                    <img
+                        className={`${styles.travolta} ${!loadedImage && styles.hidden}`}
+                        src={Tumbleweed}
+                        alt='tumbleweed meme'
+                    />
+                    <p>
+                        Please, go to <Link to={paths.root}>main page</Link>.
+                    </p>
+                </>
             </div>
         </main>
     );

@@ -7,13 +7,15 @@
 
 # testing
 /coverage
+src/**/__snapshots__
 
 # production
 /build
 
 # misc
-.vscode
-.idea
+/.serverless
+/.vscode
+/.idea
 .DS_Store
 .env.local
 .env.development.local

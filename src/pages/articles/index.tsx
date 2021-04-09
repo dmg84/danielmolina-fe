@@ -17,7 +17,7 @@ const Articles: FC = () => {
     }, [articles.length, dispatch]);
 
     return (
-        <div className={styles.base}>
+        <main className={styles.base}>
             <div className={`${styles.container} ${styles.customContainer}`}>
                 <div className={styles.specialContainer}>
                     <h1 className={styles.specialText}>Full Stack</h1>
@@ -30,7 +30,7 @@ const Articles: FC = () => {
                     return <Article key={key} article={article} />;
                 })}
             </div>
-        </div>
+        </main>
     );
 };
 
