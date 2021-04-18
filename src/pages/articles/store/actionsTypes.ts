@@ -1,4 +1,4 @@
-import { ArticleType } from '../articlesTypes';
+import { ArticleType } from '../types';
 
 export enum ArticlesActionsTypes {
     GET_ARTICLES_REQUEST = '[Articles] get articles request',

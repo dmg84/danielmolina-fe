@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Style from './styles.module.scss';
 import { useHistory } from 'react-router-dom';
-import { ArticleType } from '../../pages/articles/articlesTypes';
+import { ArticleType } from '../../pages/articles/types';
 
 type ArticlesType = {
     article: ArticleType;

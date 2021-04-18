@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import Tumbleweed from '../../images/Tumbleweed.gif';
-import { paths } from '../../routes/routes';
+import { routes } from '../../routes/routes';
 import { Link } from 'react-router-dom';
 
 const NotFound: FC = () => {
@@ -28,7 +28,7 @@ const NotFound: FC = () => {
                         alt='tumbleweed meme'
                     />
                     <p>
-                        Please, go to <Link to={paths.root}>main page</Link>.
+                        Please, go to <Link to={routes.root.path}>main page</Link>.
                     </p>
                 </>
             </div>

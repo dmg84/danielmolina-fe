@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { State } from '../../../store/store';
-import { ArticleStateType, ArticleType } from '../articlesTypes';
+import { ArticleStateType, ArticleType } from '../types';
 import { ArticlesActions, ArticlesActionsTypes } from './actionsTypes';
 
 export const initialFactorState: ArticleStateType = {

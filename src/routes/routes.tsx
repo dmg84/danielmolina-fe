@@ -7,17 +7,21 @@ const Footer = lazy(() => import('../components/footer'));
 const NotFound = lazy(() => import('../pages/not-found'));
 const Articles = lazy(() => import('../pages/articles'));
 
-export const paths = {
-    root: '/',
-    listArticles: '/articles'
+export const routes = {
+    root: { path: '/', name: 'Home' },
+    listArticles: { path: '/articles', name: 'Articles' },
+    works: { path: '/works', name: 'Works' },
+    contact: { path: '/contact', name: 'Contact' },
+    login: { path: '/login', name: 'Login' }
 };
 
 export const Routes: FC = () => (
     <Router basename={process.env.REACT_APP_APP_BASE_URL as string}>
         <Suspense fallback=''>
-            <Header />
+            <Header menuItems={[routes.listArticles, routes.works, routes.contact, routes.login]} />
             <Switch>
-                <Route exact path={paths.root} render={() => <Articles limit={3} />} />
+                <Route exact path={routes.root.path} render={() => <Articles limit={3} />} />
+                <Route exact path={routes.listArticles.path} render={() => <Articles />} />
                 <Route render={() => <NotFound />} />
             </Switch>
             <Footer />

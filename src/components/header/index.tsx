@@ -1,30 +1,45 @@
-import React, { FC, useEffect, useState } from 'react';
-import styles from './styles.module.scss';
-import { Link, useHistory } from 'react-router-dom';
+import React, { FC } from 'react';
+import MobileHeader from './mobile-header';
+import LaptopHeader from './laptop-header';
 import { useWindowSize } from '../../hooks/useWindowsize';
-import BracketLeft from '../../images/bracket_left_light_theme.png';
-import BracketRight from '../../images/bracket_right_light_theme.png';
-import { paths } from '../../routes/routes';
-import { LateralMenuMobile } from '../lateralMobileMenu';
-import GitHub from '../../images/github_dark.svg';
+import { Link } from 'react-router-dom';
+import { routes } from '../../routes/routes';
+import styles from './styles.module.scss';
+import { MenuItemType } from './types';
+import { useHistory } from 'react-router-dom';
 
-const Header: FC = () => {
-    const [openMenu, setOpenMenu] = useState(false);
-    const history = useHistory();
-    const width = useWindowSize();
-    const close = openMenu ? styles.bracket : styles.bracketHide;
-    const open = openMenu ? styles.bracketHide : styles.bracket;
+type HeaderType = {
+    menuItems: MenuItemType[];
+};
+
+const Header: FC<HeaderType> = ({ menuItems }) => {
     const mobileResolution = 768;
+    const width = useWindowSize();
+    const history = useHistory();
+    const navigation = (path: string) => {
+        history.push(path);
+    };
 
-    useEffect(() => {
-        openMenu ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = '');
-    }, [openMenu]);
+    const drawMenu = () => {
+        return menuItems.map((el, key) => {
+            return (
+                <li key={key}>
+                    <span
+                        onClick={() => navigation(el.path)}
+                        className={history.location.pathname.includes(el.path.toLowerCase()) ? styles.active : ''}
+                    >
+                        {el.name}
+                    </span>
+                </li>
+            );
+        });
+    };
 
     return (
         <>
             <header className={styles.header}>
                 <div className={styles.subHeader}>
-                    <Link className={styles.name} to={paths.root}>
+                    <Link className={styles.name} to={routes.root.path}>
                         <span className={styles.anthracite}>d</span>
                         <span>aniel</span>
                         <span className={styles.anthracite}>M</span>
@@ -32,60 +47,12 @@ const Header: FC = () => {
                     </Link>
 
                     {width > mobileResolution ? (
-                        <ul className={styles.menu}>
-                            <li>
-                                <Link
-                                    className={history.location.pathname.includes('aaa') ? styles.active : ''}
-                                    to={'#'}
-                                >
-                                    About
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    className={
-                                        history.location.pathname.includes(paths.listArticles) ? styles.active : ''
-                                    }
-                                    to={paths.listArticles}
-                                >
-                                    Articles
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to={'#'}>Works</Link>
-                            </li>
-                            <li>
-                                <Link to={'#'}>Contact</Link>
-                            </li>
-                            <li>
-                                <a
-                                    href={process.env.REACT_APP_GITHUB_URL}
-                                    rel='noopener noreferrer'
-                                    target={'_blank'}
-                                    className={styles.iconLink}
-                                >
-                                    <img className={styles.icon} src={GitHub} alt='github icon' />
-                                </a>
-                            </li>
-                        </ul>
+                        <LaptopHeader>{drawMenu()}</LaptopHeader>
                     ) : (
-                        <div
-                            className={`${styles.menuBtn}`}
-                            onClick={() => {
-                                setOpenMenu(!openMenu);
-                            }}
-                        >
-                            <img src={BracketLeft} alt='' />
-                            <div className={styles.menuBtnText}>
-                                <span className={close}>Close</span>
-                                <span className={open}>Open</span>
-                            </div>
-                            <img src={BracketRight} alt='' />
-                        </div>
+                        <MobileHeader>{drawMenu()}</MobileHeader>
                     )}
                 </div>
             </header>
-            <LateralMenuMobile show={openMenu && width <= mobileResolution} />
         </>
     );
 };

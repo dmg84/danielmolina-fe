@@ -1,4 +1,4 @@
-import { ArticleType } from './articlesTypes';
+import { ArticleType } from './types';
 
 export const getArticles = async (): Promise<ArticleType[]> => {
     return new Promise((resolve) => {

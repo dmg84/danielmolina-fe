@@ -1,0 +1,123 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+@import '../../../styles/responsive';
+
+.menuBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    span {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: $black;
+        min-width: 65px;
+        text-align: center;
+    }
+}
+
+.menuBtnText {
+    min-width: 65px;
+    position: relative;
+
+    span {
+        position: absolute;
+        top: -15px;
+        min-width: 65px;
+        font-weight: normal;
+    }
+}
+
+.bracket {
+    transition: opacity 0.75s;
+    opacity: 1;
+}
+
+.bracketHide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menuContainer {
+    width: 0;
+    background-color: $white-smoke;
+    color: $white;
+    min-height: calc(100vh - 70px);
+    position: absolute;
+    opacity: 0;
+    top: 70px;
+    z-index: -1;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.menuIn {
+    animation: menuIn 0.3s ease-in forwards;
+}
+
+.menuOut {
+    animation: menuOut 0.3s ease-in forwards;
+}
+
+@keyframes menuIn {
+    0% {
+        opacity: 0;
+        z-index: -1;
+        width: 0;
+    }
+    100% {
+        opacity: 1;
+        z-index: 999;
+        width: 100%;
+    }
+}
+
+@keyframes menuOut {
+    0% {
+        opacity: 1;
+        z-index: 999;
+        width: 100%;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+        width: 0;
+    }
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 35px 0 0;
+
+    li {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    li span {
+        font-size: 1.4rem;
+        color: $white;
+        text-decoration: none;
+        font-weight: normal;
+    }
+
+    .iconContainer {
+        width: 45px;
+
+        .icon {
+            width: 45px;
+            max-width: 45px !important;
+        }
+    }
+}

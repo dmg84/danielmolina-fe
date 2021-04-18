@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import styles from './styles.module.scss';
 import Article from '../../components/article/index';
-import { ArticleType } from './articlesTypes';
+import { ArticleType } from './types';
 import { GetArticlesReducer } from './store/reducer';
 import { useDispatch } from 'react-redux';
 import { getArticlesRequest } from './store/actions';

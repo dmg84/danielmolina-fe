@@ -1,4 +1,4 @@
-import { ArticleType } from '../articlesTypes';
+import { ArticleType } from '../types';
 import { ArticlesActions, ArticlesActionsTypes } from './actionsTypes';
 
 export const getArticlesRequest = (): ArticlesActions => {
