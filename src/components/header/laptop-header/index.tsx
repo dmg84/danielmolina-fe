@@ -1,15 +1,15 @@
 import React, { FC } from 'react';
-import styles from './styles.module.scss';
 import GitHub from '../../../images/github_dark.svg';
+import styles from './styles.module.scss';
 
-const LaptopHeader: FC = ({ children }) => {
+const LaptopHeader: FC<{ children?: React.ReactNode }> = ({ children }) => {
     return (
         <ul className={styles.menu}>
             {children}
 
             <li>
                 <a
-                    href={process.env.REACT_APP_GITHUB_URL}
+                    href={(import.meta.env.VITE_GITHUB_URL as string) || ''}
                     rel='noopener noreferrer'
                     target={'_blank'}
                     className={styles.iconLink}

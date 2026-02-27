@@ -1,56 +1,65 @@
-@import "styles/fonts";
-@import "styles/responsive";
-@import "styles/colors";
+@use 'styles/fonts' as *;
+@use 'styles/responsive' as *;
+@use 'styles/colors' as *;
 
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
-  margin: 0;
-  font-family: $font-body;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
+    margin: 0;
+    font-family: $font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: $font-titles;
-  font-weight: 500;
-  font-size: 1.6rem;
-  color: $white-smoke;
-  margin-top: 0;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: $font-titles;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: $white-smoke;
+    margin-top: 0;
 }
 
-p, span, a {
-  font-weight: normal;
-  font-size: 1rem;
-  color: $black;
+p,
+span,
+a {
+    font-weight: normal;
+    font-size: 1rem;
+    color: $black;
 }
 
 code {
-  font-family: $font-code
+    font-family: $font-code;
 }
 
 .slick-slider {
-  margin: 25px auto 25px;
-  outline: none;
+    margin: 25px auto 25px;
+    outline: none;
 }
 
-.slick-prev:before, .slick-next:before {
-  color: $black;
+.slick-prev:before,
+.slick-next:before {
+    color: $black;
 }
 
-.slick-next, .slick-prev {
-  top: 90px;
+.slick-next,
+.slick-prev {
+    top: 90px;
 }
 
 .slick-prev {
-  left: -35px;
+    left: -35px;
 }
 
-.slick-next:before, .slick-prev:before {
-  font-size: 1.8rem;
+.slick-next:before,
+.slick-prev:before {
+    font-size: 1.8rem;
 }
-

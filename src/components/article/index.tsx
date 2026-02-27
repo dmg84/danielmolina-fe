@@ -1,16 +1,16 @@
-import React, { FC } from 'react';
-import Style from './styles.module.scss';
-import { useHistory } from 'react-router-dom';
+import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArticleType } from '../../pages/articles/types';
+import Style from './styles.module.scss';
 
 type ArticlesType = {
     article: ArticleType;
 };
 
 const Article: FC<ArticlesType> = ({ article }) => {
-    const history = useHistory();
+    const navigate = useNavigate();
     const handleClick = (path: string) => {
-        history.push(path);
+        navigate(path);
     };
 
     return (

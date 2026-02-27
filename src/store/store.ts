@@ -1,31 +1,23 @@
-import { applyMiddleware, compose, createStore, combineReducers } from 'redux';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { createBrowserHistory, History } from 'history';
-import { connectRouter, routerMiddleware } from 'connected-react-router';
-import { ArticleStateType } from '../pages/articles/types';
+// routing state moved out of Redux; use react-router v6 hooks in components
 import { articleReducer } from '../pages/articles/store/reducer';
 import articleSagas from '../pages/articles/store/saga';
-
-export const history = createBrowserHistory();
+import { ArticleStateType } from '../pages/articles/types';
 
 export type State = {
     articleReducer: ArticleStateType;
-    router: History;
 };
 
 export const reducers = combineReducers({
-    router: connectRouter(history),
     articleReducer
 });
 
 export const sagaMiddleware = createSagaMiddleware();
 
-export default createStore(
-    reducers,
-    composeWithDevTools(compose(applyMiddleware(sagaMiddleware, routerMiddleware(history))))
-);
+export default createStore(reducers, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 
 function* rootSaga() {
     yield all([

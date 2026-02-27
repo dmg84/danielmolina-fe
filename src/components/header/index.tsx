@@ -1,12 +1,11 @@
-import React, { FC } from 'react';
-import MobileHeader from './mobile-header';
-import LaptopHeader from './laptop-header';
+import { FC } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../../hooks/useWindowsize';
-import { Link } from 'react-router-dom';
 import { routes } from '../../routes/routes';
+import LaptopHeader from './laptop-header';
+import MobileHeader from './mobile-header';
 import styles from './styles.module.scss';
 import { MenuItemType } from './types';
-import { useHistory } from 'react-router-dom';
 
 type HeaderType = {
     menuItems: MenuItemType[];
@@ -15,9 +14,10 @@ type HeaderType = {
 const Header: FC<HeaderType> = ({ menuItems }) => {
     const mobileResolution = 768;
     const width = useWindowSize();
-    const history = useHistory();
+    const navigate = useNavigate();
+    const location = useLocation();
     const navigation = (path: string) => {
-        history.push(path);
+        navigate(path);
     };
 
     const drawMenu = () => {
@@ -26,7 +26,7 @@ const Header: FC<HeaderType> = ({ menuItems }) => {
                 <li key={key}>
                     <span
                         onClick={() => navigation(el.path)}
-                        className={history.location.pathname.includes(el.path.toLowerCase()) ? styles.active : ''}
+                        className={location.pathname.includes(el.path.toLowerCase()) ? styles.active : ''}
                     >
                         {el.name}
                     </span>

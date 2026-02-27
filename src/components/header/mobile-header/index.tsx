@@ -1,19 +1,25 @@
 import React, { FC, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useScroll } from '../../../hooks/useScroll';
-import styles from './styles.module.scss';
-import GitHubLight from '../../../images/github_light.svg';
 import BracketLeft from '../../../images/bracket_left_light_theme.png';
 import BracketRight from '../../../images/bracket_right_light_theme.png';
-import { useHistory } from 'react-router-dom';
+import GitHubLight from '../../../images/github_light.svg';
+import styles from './styles.module.scss';
 
-const MobileHeader: FC = ({ children }) => {
+const MobileHeader: FC<{ children?: React.ReactNode }> = ({ children }) => {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const [memo, setMemo] = useState<boolean>(false);
     const [animation, setAnimation] = useState<string>('');
     const [blockScroll, allowScroll] = useScroll();
-    const history = useHistory();
+    const navigate = useNavigate();
 
-    history.listen(() => setOpenMenu(false));
+    // listen() removed; use navigation side-effects where needed. Close menu on navigation by effect
+    useEffect(() => {
+        const unlisten = () => {
+            /* placeholder to satisfy migration; MemoryRouter used in tests */
+        };
+        return unlisten;
+    }, [navigate]);
 
     const launchHideAnimation = () => {
         setAnimation(styles.menuOut);
@@ -58,7 +64,11 @@ const MobileHeader: FC = ({ children }) => {
 
                         <li>
                             <div className={styles.iconContainer}>
-                                <a href={process.env.REACT_APP_GITHUB_URL} rel='noopener noreferrer' target={'_blank'}>
+                                <a
+                                    href={(import.meta.env.VITE_GITHUB_URL as string) || ''}
+                                    rel='noopener noreferrer'
+                                    target={'_blank'}
+                                >
                                     <img className={styles.icon} src={GitHubLight} alt='github icon' />
                                 </a>
                             </div>

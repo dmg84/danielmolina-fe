@@ -58,3 +58,35 @@ should also regularly review and apply any available patches or associated secur
 advisories for dependencies used within your application.
 
 Best Practices: https://docs.aws.amazon.com/codestar/latest/userguide/best-practices.html?icmpid=docs_acs_rm_sec
+
+## Development (Vite)
+
+-   Start dev server:
+
+```bash
+npm run dev
+```
+
+-   Vite reads environment variables prefixed with `VITE_`. Create a `.env` at project root with keys such as:
+
+```
+VITE_APP_BASE_URL=
+VITE_API_BASE_URL=
+VITE_GITHUB_URL=
+```
+
+## Tests (Vitest)
+
+-   Run unit tests:
+
+```bash
+npm run test
+```
+
+-   Run tests in watch mode:
+
+```bash
+npm run test:local
+```
+
+Vitest is configured via `vitest.config.ts` and uses `src/vitest.setup.ts` for test setup.

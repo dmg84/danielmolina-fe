@@ -1,6 +1,5 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import React, { lazy, Suspense } from 'react';
-import { FC } from 'react';
+import { FC, lazy, Suspense } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 const Header = lazy(() => import('../components/header'));
 const Footer = lazy(() => import('../components/footer'));
@@ -15,16 +14,19 @@ export const routes = {
     login: { path: '/login', name: 'Login' }
 };
 
-export const Routes: FC = () => (
-    <Router basename={process.env.REACT_APP_APP_BASE_URL as string}>
-        <Suspense fallback=''>
-            <Header menuItems={[routes.listArticles, routes.works, routes.contact, routes.login]} />
-            <Switch>
-                <Route exact path={routes.root.path} render={() => <Articles limit={3} />} />
-                <Route exact path={routes.listArticles.path} render={() => <Articles />} />
-                <Route render={() => <NotFound />} />
-            </Switch>
-            <Footer />
-        </Suspense>
-    </Router>
-);
+export const AppRoutes: FC = () => {
+    const basename = (import.meta.env.VITE_APP_BASE_URL as string) || '';
+    return (
+        <Router basename={basename}>
+            <Suspense fallback={null}>
+                <Header menuItems={[routes.listArticles, routes.works, routes.contact, routes.login]} />
+                <Routes>
+                    <Route path={routes.root.path} element={<Articles limit={3} />} />
+                    <Route path={routes.listArticles.path} element={<Articles />} />
+                    <Route path='*' element={<NotFound />} />
+                </Routes>
+                <Footer />
+            </Suspense>
+        </Router>
+    );
+};

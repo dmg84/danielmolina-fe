@@ -1,5 +1,5 @@
-@import 'fonts';
-@import 'responsive';
+@use 'fonts' as *;
+@use 'responsive' as *;
 
 .base {
     min-height: calc(100vh - 125px);

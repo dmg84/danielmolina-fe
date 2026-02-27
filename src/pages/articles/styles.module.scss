@@ -1,8 +1,8 @@
-@import '../../styles/base';
-@import '../../styles/buttons';
-@import '../../styles/responsive';
-@import '../../styles/fonts';
-@import '../../styles/colors';
+@use '../../styles/base' as *;
+@use '../../styles/buttons' as *;
+@use '../../styles/responsive' as *;
+@use '../../styles/fonts' as *;
+@use '../../styles/colors' as *;
 
 .customContainer {
     @media screen and (max-width: $mobile) {

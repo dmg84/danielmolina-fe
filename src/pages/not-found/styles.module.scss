@@ -1,5 +1,5 @@
-@import '../../styles/base';
-@import '../../styles/responsive';
+@use '../../styles/base' as *;
+@use '../../styles/responsive' as *;
 
 .container {
     width: 100%;

@@ -1,6 +1,6 @@
-@import '../../styles/colors';
-@import '../../styles/fonts';
-@import '../../styles/responsive';
+@use '../../styles/colors' as *;
+@use '../../styles/fonts' as *;
+@use '../../styles/responsive' as *;
 
 .element {
     cursor: pointer;

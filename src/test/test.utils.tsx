@@ -1,12 +1,11 @@
-import React from 'react';
 import { Provider } from 'react-redux';
-import store, { history } from '../store/store';
-import { ConnectedRouter } from 'connected-react-router';
+import { MemoryRouter } from 'react-router-dom';
+import store from '../store/store';
 
 export const mount = (ui: JSX.Element): JSX.Element => {
     return (
         <Provider store={store}>
-            <ConnectedRouter history={history}>{ui}</ConnectedRouter>
+            <MemoryRouter>{ui}</MemoryRouter>
         </Provider>
     );
 };

@@ -1,21 +1,20 @@
+// Router is handled inside route components (react-router v6)
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import store, { history } from './store/store';
-import { ConnectedRouter } from 'connected-react-router';
+import App from './App';
+import './index.scss';
+import reportWebVitals from './reportWebVitals';
+import store from './store/store';
 
-ReactDOM.render(
+const container = document.getElementById('root') as HTMLElement;
+const root = createRoot(container);
+root.render(
     <React.StrictMode>
         <Provider store={store}>
-            <ConnectedRouter history={history}>
-                <App />
-            </ConnectedRouter>
+            <App />
         </Provider>
-    </React.StrictMode>,
-    document.getElementById('root')
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

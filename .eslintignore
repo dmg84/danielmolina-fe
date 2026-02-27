@@ -1,4 +1,6 @@
 reportWebVitals.ts
 **/*.test.ts
 **/*.test.tsx
+**/*.tsx.snap
+eslint:fix
 index.js
